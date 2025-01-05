@@ -1,29 +1,21 @@
-import axios from "axios"
-
-async function getUserDetail (){
-    const response = await axios.get("https://jsonplaceholder.typicode.com/users")
-    return response.data
-}
-
-export default async function Users(){
-
-    const userData = await getUserDetail()
-
-    await new Promise((r => setTimeout(r, 5000)))
+import axios from "axios";
 
 
-    return (
+export default async function Home() {
+  const userData = (await axios.get("http://localhost:3000/api/v1/user")).data;
 
-        <div className="flex flex-col justify-center h-screen">
+  return (
+    <div className="flex flex-col justify-center h-screen">
         <div className="flex justify-center">
             <div className="border p-8 rounded">
                 <div>
-                    Name: {userData[0]?.name}
+                    Name: {userData?.user}
                 </div>
                 
-                {userData[0]?.email}
+                {userData?.email}
             </div>
         </div>
     </div>
-    )
+  );
 }
+
