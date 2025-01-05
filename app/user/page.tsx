@@ -9,6 +9,8 @@ export default async function Users(){
 
     const userData = await getUserDetail()
 
+    await new Promise((r => setTimeout(r, 5000)))
+
 
     return (
 
