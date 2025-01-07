@@ -2,7 +2,7 @@ import axios from "axios"
 
 
 
-export default async function Post({params}:any){
+export default async function Post({params}:{params:Promise<{postId:string}>}){
     const postid = (await params).postId
 
     const blogPost  = await (await axios.get(`https://jsonplaceholder.typicode.com/posts/${postid}`)).data

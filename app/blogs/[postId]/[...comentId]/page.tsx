@@ -1,8 +1,12 @@
 
 
+interface PramsProps{
+    params:Promise<{postId:string,comentId:[string]}>
 
-export default async function Comment({params}:any) {
-    const postId  = (await params).postId
+}
+
+export default async function Comment({params}:PramsProps) {
+    // const postId  = (await params).postId
     const rest = (await params).comentId;  
 
 
