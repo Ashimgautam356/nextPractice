@@ -2,8 +2,8 @@
 
 export default function User(){
     return(
-        <div>
-            i'm user
+        <div className="border border-red-700 h-screen ">
+            i'm
         </div>
     )
 }
